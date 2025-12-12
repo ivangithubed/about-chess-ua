@@ -1,7 +1,11 @@
 (function () {
-    // Page transition animation with View Transitions API
-    if ('startViewTransition' in document) {
-        // Use modern View Transitions API
+    // Page transition animation - ONLY for desktop Chrome/Edge
+    var isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+    var isChromiumDesktop = !isMobile && 'startViewTransition' in document && 
+                           (navigator.userAgent.indexOf('Chrome') > -1 || navigator.userAgent.indexOf('Edg') > -1);
+    
+    if (isChromiumDesktop) {
+        // Use View Transitions API only on desktop Chrome/Edge
         document.addEventListener("click", function (e) {
             var link = e.target.closest("a");
             if (!link) return;
@@ -16,29 +20,8 @@
                 });
             }
         });
-    } else {
-        // Fallback: simple fade without white flash
-        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        
-        if (!reduceMotion) {
-            document.addEventListener("click", function (e) {
-                var link = e.target.closest("a");
-                if (!link) return;
-
-                var href = link.getAttribute("href");
-                if (href && !href.startsWith("#") && !href.startsWith("http") && !link.hasAttribute("target")) {
-                    e.preventDefault();
-                    
-                    document.body.style.transition = "opacity 0.2s ease";
-                    document.body.style.opacity = "0";
-                    
-                    setTimeout(function () {
-                        window.location.href = href;
-                    }, 200);
-                }
-            });
-        }
     }
+    // No fallback - on mobile and Firefox just use default browser navigation
 
     // Mark current page in the top navigation
     var path = (location.pathname || "").replace(/\\/g, "/");
@@ -124,4 +107,51 @@
             history.pushState(null, "", "#" + id);
         });
     });
+
+    // Scroll animations for non-home pages
+    if (!document.body.classList.contains("home")) {
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        
+        if (!reduceMotion && 'IntersectionObserver' in window) {
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                        entry.target.classList.remove('animate-out');
+                    } else {
+                        // Check if element was previously visible
+                        if (entry.target.classList.contains('animate-in')) {
+                            entry.target.classList.remove('animate-in');
+                            entry.target.classList.add('animate-out');
+                        }
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            // Observe elements to animate
+            var animatedSelectors = [
+                '.panel',
+                '.piece-card',
+                '.timeline .item',
+                '.piece-intro',
+                '.piece-hero',
+                '.kicker',
+                'h1',
+                'h2',
+                '.lead',
+                '.hero-actions',
+                '.note'
+            ];
+
+            animatedSelectors.forEach(function(selector) {
+                document.querySelectorAll(selector).forEach(function(el) {
+                    el.classList.add('scroll-animate');
+                    observer.observe(el);
+                });
+            });
+        }
+    }
 })();
