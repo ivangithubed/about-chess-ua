@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Playfair+Display:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Ферзь — шахова фігура</title>
+    <meta
+      name="description"
+      content="Ферзь у шахах: як ходить, типові помилки, цінність, тактика та приклади."
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Перейти до вмісту</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../index.html" aria-label="На головну">
+          <span class="brand-mark" aria-hidden="true">
+            <svg
+              viewBox="0 0 100 100"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="25" cy="25" r="8" fill="#e4c08a" />
+              <circle cx="75" cy="25" r="8" fill="#d1a35f" />
+              <circle cx="25" cy="75" r="8" fill="#d1a35f" />
+              <circle cx="75" cy="75" r="8" fill="#e4c08a" />
+              <path
+                d="M50 20 L65 35 L50 50 L35 35 Z"
+                fill="#e4c08a"
+                opacity="0.9"
+              />
+              <path
+                d="M50 50 L65 65 L50 80 L35 65 Z"
+                fill="#d1a35f"
+                opacity="0.9"
+              />
+              <circle cx="50" cy="50" r="6" fill="#f6efe6" />
+            </svg>
+          </span>
+          <span class="brand-title">Шахи</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          aria-label="Відкрити меню"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav" aria-label="Основна навігація">
+          <a href="../history.html">Історія</a>
+          <a href="../pieces.html">Фігури</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="article">
+      <div class="container">
+        <nav class="subnav" aria-label="Фігури">
+          <a href="king.html">Король</a>
+          <a href="queen.html" aria-current="page">Ферзь</a>
+          <a href="rook.html">Тура</a>
+          <a href="bishop.html">Слон</a>
+          <a href="knight.html">Кінь</a>
+          <a href="pawn.html">Пішак</a>
+        </nav>
+        <div class="piece-intro">
+          <div>
+            <h1>Ферзь: сила, що потребує дисципліни</h1>
+            <p class="lead">
+              Ферзь — найпотужніша фігура, бо поєднує можливості тури й слона. Його
+              умовна цінність часто оцінюється як <strong>9 очок</strong>, але на
+              практиці важливіше не «вартість», а <strong>активність</strong> та
+              <strong>безпека</strong>.
+            </p>
+          </div>
+          <div class="sil" aria-label="Силует ферзя">
+            <div data-sil="queen" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <div class="piece-hero">
+          <div class="panel">
+            <h2>Як ходить ферзь</h2>
+            <p>
+              Ферзь ходить на будь-яку кількість клітинок по
+              <strong>вертикалі</strong>, <strong>горизонталі</strong> або
+              <strong>діагоналі</strong>, доки шлях не перекритий іншою фігурою.
+            </p>
+
+            <h3>Приклад</h3>
+            <p>
+              Ферзь на <strong>d4</strong> може піти на d1–d8 (вертикаль), a4–h4
+              (горизонталь) та на діагоналі a1–h8 і a7–g1. На практиці вибір
+              залежить від того, які поля ви атакуєте і чи не підставляєте ферзя
+              під темп.
+            </p>
+
+          </div>
+
+          <div class="move-diagram" aria-label="Схема руху ферзя">
+            <pre>■  ·  ·  ■  ·  ·  ■
+·  ■  ·  ■  ·  ■  ·
+·  ·  ■  ■  ■  ·  ·
+■  ■  ■  ♕  ■  ■  ■
+·  ·  ■  ■  ■  ·  ·
+·  ■  ·  ■  ·  ■  ·
+■  ·  ·  ■  ·  ·  ■</pre>
+            <p class="diagram-caption">
+              ■ — доступні поля (вертикалі + горизонталі + діагоналі)
+            </p>
+          </div>
+        </div>
+
+        <h2>Чому ранній вихід ферзя часто поганий</h2>
+        <p>
+          Початківці люблять швидко виводити ферзя в атаку, але сильні суперники
+          відповідають просто: атакують ферзя легкими фігурами, змушуючи його
+          відступати. Ви витрачаєте ходи на відходи, а суперник — розвивається.
+        </p>
+        <ul>
+          <li>
+            <strong>Темп</strong>: якщо вас змусили відступити — ви втратили
+            час.
+          </li>
+          <li>
+            <strong>Уразливість</strong>: ферзь великий і цінний; його легко
+            «ганяти» кіньми та слонами.
+          </li>
+          <li>
+            <strong>Ризик пасток</strong>: ферзя можна заманити в кут або під
+            вилку.
+          </li>
+        </ul>
+
+        <h2>Типові тактичні ідеї ферзя</h2>
+        <div class="panel">
+          <h3>1) Шахи та примус</h3>
+          <p>
+            Ферзь часто створює серії шахів, що примушують суперника до єдиного
+            захисту. Це може виграти матеріал (наприклад, «шах із нападом» на
+            туру) або привести до мата.
+          </p>
+
+          <h3>2) Подвійний напад</h3>
+          <p>
+            Ферзь одночасно атакує різні цілі. Наприклад, ферзь на
+            <strong>c7</strong> може атакувати короля на <strong>e7</strong> і
+            туру на <strong>a7</strong> (залежно від позиції) — одна фігура
+            створює багато загроз.
+          </p>
+
+          <h3>3) Зв’язування</h3>
+          <p>
+            Ферзь може «зв’язати» фігуру по лінії: якщо фігура відійде —
+            відкриється шах або буде втрачена цінніша фігура позаду.
+          </p>
+        </div>
+
+        <h2>Ферзь у різних стадіях партії</h2>
+        <ul>
+          <li>
+            <strong>Дебют</strong>: обережно. Часто краще розвинути легкі фігури
+            й зробити рокіровку.
+          </li>
+          <li>
+            <strong>Мітельшпіль</strong>: ферзь підсилює атаки, переключається
+            між флангами, підтримує прориви пішаків.
+          </li>
+          <li>
+            <strong>Ендшпіль</strong>: ферзь дуже сильний через шахи та
+            здатність атакувати слабкості з далекої відстані, але важлива
+            точність, бо один шах може змінити все.
+          </li>
+        </ul>
+
+        <h2>Поради, щоб ферзь працював «дорого», а не ризиковано</h2>
+        <ul>
+          <li>Питайте себе: «Чи не даю я супернику темп на атаку ферзя?»</li>
+          <li>
+            Тримайте ферзя на <strong>безпечних</strong> і
+            <strong>активних</strong> полях (часто позаду власної пішакової
+            структури).
+          </li>
+          <li>
+            Не міняйте ферзя без причини: обмін може бути вигідний у захисті,
+            але невигідний, якщо ви атакуєте.
+          </li>
+        </ul>
+
+        <div class="panel">
+          <h2>Підсумок</h2>
+          <p>
+            Ферзь — це «універсальний інструмент»: атакує, захищає і контролює
+            простір. Але його сила вимагає акуратності: один неточний вихід — і
+            суперник виграє темп або навіть самого ферзя.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="../index.html">На головну</a>
+            <a class="button primary" href="rook.html">Далі: тура</a>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div class="container">
+            <p><a href="../index.html#pieces">← Усі фігури</a></p>
+          </div>
+        </footer>
+      </div>
+    </main>
+
+    <script src="../assets/silhouettes.js"></script>
+    <script src="../script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Playfair+Display:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Кінь — шахова фігура</title>
+    <meta
+      name="description"
+      content="Кінь у шахах: хід літерою Г, вилка, форпост, контроль полів та приклади."
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Перейти до вмісту</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../index.html" aria-label="На головну">
+          <span class="brand-mark" aria-hidden="true">
+            <svg
+              viewBox="0 0 100 100"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="25" cy="25" r="8" fill="#e4c08a" />
+              <circle cx="75" cy="25" r="8" fill="#d1a35f" />
+              <circle cx="25" cy="75" r="8" fill="#d1a35f" />
+              <circle cx="75" cy="75" r="8" fill="#e4c08a" />
+              <path
+                d="M50 20 L65 35 L50 50 L35 35 Z"
+                fill="#e4c08a"
+                opacity="0.9"
+              />
+              <path
+                d="M50 50 L65 65 L50 80 L35 65 Z"
+                fill="#d1a35f"
+                opacity="0.9"
+              />
+              <circle cx="50" cy="50" r="6" fill="#f6efe6" />
+            </svg>
+          </span>
+          <span class="brand-title">Шахи</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          aria-label="Відкрити меню"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav" aria-label="Основна навігація">
+          <a href="../history.html">Історія</a>
+          <a href="../pieces.html">Фігури</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="article">
+      <div class="container">
+        <nav class="subnav" aria-label="Фігури">
+          <a href="king.html">Король</a>
+          <a href="queen.html">Ферзь</a>
+          <a href="rook.html">Тура</a>
+          <a href="bishop.html">Слон</a>
+          <a href="knight.html" aria-current="page">Кінь</a>
+          <a href="pawn.html">Пішак</a>
+        </nav>
+        <div class="piece-intro">
+          <div>
+            <h1>Кінь: стрибок, який ламає лінії</h1>
+            <p class="lead">
+              Кінь — легка фігура (типово <strong>≈3 очки</strong>), яка рухається
+              не по лініях, а стрибком. Через це кінь особливо небезпечний у
+              тактиці: він створює вилки, нападає «з-за кутка» і не залежить від
+              блокад.
+            </p>
+          </div>
+          <div class="sil" aria-label="Силует коня">
+            <div data-sil="knight" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <div class="piece-hero">
+          <div class="panel">
+            <h2>Як ходить кінь</h2>
+            <p>
+              Кінь ходить літерою «Г»: <strong>2 клітинки</strong> в одному
+              напрямку (вертикаль/горизонталь) і
+              <strong>1 клітинку</strong> перпендикулярно. Головне правило: кінь
+              <strong>перестрибує</strong> через фігури — на відміну від слона,
+              тури чи ферзя.
+            </p>
+
+            <h3>Приклад</h3>
+            <p>
+              Кінь на <strong>e4</strong> може піти на: c3, c5, d2, d6, f2, f6,
+              g3, g5. Тому кінь контролює поля «нестандартно», і його важко
+              відразу побачити новачку — але варто запам’ятати ці шаблони.
+            </p>
+
+          </div>
+
+          <div class="move-diagram" aria-label="Схема руху коня">
+            <pre>·  ·  ·  ·  ·  ·  ·
+·  ·  ■  ·  ■  ·  ·
+·  ■  ·  ·  ·  ■  ·
+·  ·  ·  ♞  ·  ·  ·
+·  ■  ·  ·  ·  ■  ·
+·  ·  ■  ·  ■  ·  ·
+·  ·  ·  ·  ·  ·  ·</pre>
+            <p class="diagram-caption">■ — доступні поля (хід буквою "Г")</p>
+          </div>
+        </div>
+
+        <h2>Вилка: фірмовий прийом коня</h2>
+        <p>
+          <strong>Вилка</strong> — це подвійний напад. Кінь особливо сильний у
+          вилках, бо часто одночасно атакує короля і дорогу фігуру. Якщо король
+          під шахом, він мусить реагувати, і друга ціль часто втрачається.
+        </p>
+        <div class="panel">
+          <h3>Уявний приклад</h3>
+          <p>
+            Уявіть: кінь стрибає на <strong>f6</strong> і одночасно дає шах
+            королю на <strong>h7</strong> (умовно) та атакує ферзя на
+            <strong>e4</strong>. Навіть якщо геометрія конкретного прикладу
+            зміниться, принцип один: кінь шукає поля, звідки атакує дві важливі
+            цілі.
+          </p>
+        </div>
+
+        <h2>Форпост: ідеальна «квартира» для коня</h2>
+        <p>
+          Кінь найкращий, коли стоїть на <strong>стійкому полі</strong> в центрі
+          або близько до короля суперника. <strong>Форпост</strong> — це поле,
+          яке важко прогнати пішаком і яке прикрито вашим пішаком. З такого поля
+          кінь контролює багато ключових клітин.
+        </p>
+        <ul>
+          <li>Кінь на форпості створює постійну загрозу вилок.</li>
+          <li>
+            Якщо прогнати його пішаком неможливо — суперник змушений міняти або
+            терпіти тиск.
+          </li>
+        </ul>
+
+        <h2>Кінь проти слона</h2>
+        <p>
+          У спрощеному вигляді: у <strong>відкритих</strong> позиціях слон часто
+          сильніший (далека дія), а у <strong>закритих</strong> — кінь (стрибки
+          через блокади). Але все залежить від структури пішаків і конкретних
+          полів.
+        </p>
+
+        <h2>Практичні поради</h2>
+        <ul>
+          <li>
+            Не ставте коня на край дошки без причини: «кінь на краю — біда в
+            бою» (бо контролює менше полів).
+          </li>
+          <li>
+            Шукайте вилки після кожного ходу суперника: кінь любить
+            <strong>слабкі поля</strong> біля короля.
+          </li>
+          <li>
+            Пам’ятайте, що кінь атакує «не по прямій»: інколи ваш король у
+            небезпеці, навіть якщо між стоять фігури.
+          </li>
+        </ul>
+
+        <div class="panel">
+          <h2>Підсумок</h2>
+          <p>
+            Кінь — тактичний артист. Він не потребує відкритих ліній і може
+            раптово створити подвійні удари. Освойте шаблон його ходів і ви
+            почнете бачити вилки та форпости на кілька ходів уперед.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="../index.html">На головну</a>
+            <a class="button primary" href="pawn.html">Далі: пішак</a>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div class="container">
+            <p><a href="../index.html#pieces">← Усі фігури</a></p>
+          </div>
+        </footer>
+      </div>
+    </main>
+
+    <script src="../assets/silhouettes.js"></script>
+    <script src="../script.js"></script>
+  </body>
+</html>

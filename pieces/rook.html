@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Playfair+Display:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Тура — шахова фігура</title>
+    <meta
+      name="description"
+      content="Тура у шахах: рух по лініях, відкриті вертикалі, сьома горизонталь, взаємодія з пішаковою структурою та приклади."
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Перейти до вмісту</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../index.html" aria-label="На головну">
+          <span class="brand-mark" aria-hidden="true">
+            <svg
+              viewBox="0 0 100 100"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="25" cy="25" r="8" fill="#e4c08a" />
+              <circle cx="75" cy="25" r="8" fill="#d1a35f" />
+              <circle cx="25" cy="75" r="8" fill="#d1a35f" />
+              <circle cx="75" cy="75" r="8" fill="#e4c08a" />
+              <path
+                d="M50 20 L65 35 L50 50 L35 35 Z"
+                fill="#e4c08a"
+                opacity="0.9"
+              />
+              <path
+                d="M50 50 L65 65 L50 80 L35 65 Z"
+                fill="#d1a35f"
+                opacity="0.9"
+              />
+              <circle cx="50" cy="50" r="6" fill="#f6efe6" />
+            </svg>
+          </span>
+          <span class="brand-title">Шахи</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          aria-label="Відкрити меню"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav" aria-label="Основна навігація">
+          <a href="../history.html">Історія</a>
+          <a href="../pieces.html">Фігури</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="article">
+      <div class="container">
+        <nav class="subnav" aria-label="Фігури">
+          <a href="king.html">Король</a>
+          <a href="queen.html">Ферзь</a>
+          <a href="rook.html" aria-current="page">Тура</a>
+          <a href="bishop.html">Слон</a>
+          <a href="knight.html">Кінь</a>
+          <a href="pawn.html">Пішак</a>
+        </nav>
+        <div class="piece-intro">
+          <div>
+            <h1>Тура: лінійна сила та контроль вертикалей</h1>
+            <p class="lead">
+              Тура — одна з головних «важких» фігур. Її умовна цінність часто
+              оцінюється як <strong>5 очок</strong>. Найсильніше тура проявляється,
+              коли має <strong>відкриті лінії</strong> та може вторгатися на 7-му
+              (або 2-гу) горизонталь.
+            </p>
+          </div>
+          <div class="sil" aria-label="Силует тури">
+            <div data-sil="rook" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <div class="piece-hero">
+          <div class="panel">
+            <h2>Як ходить тура</h2>
+            <p>
+              Тура ходить на будь-яку кількість клітинок по
+              <strong>вертикалі</strong> або <strong>горизонталі</strong>. Вона
+              не може «перестрибувати» фігури: на шляху має бути порожньо.
+            </p>
+
+            <h3>Приклад</h3>
+            <p>
+              Тура на <strong>a1</strong> контролює всю вертикаль «a»: a2–a8
+              (якщо немає фігур між). А тура на <strong>e4</strong> контролює
+              e1–e8 і a4–h4.
+            </p>
+
+          </div>
+
+          <div class="move-diagram" aria-label="Схема руху тури">
+            <pre>·  ·  ·  ■  ·  ·  ·
+·  ·  ·  ■  ·  ·  ·
+·  ·  ·  ■  ·  ·  ·
+■  ■  ■  ♜  ■  ■  ■
+·  ·  ·  ■  ·  ·  ·
+·  ·  ·  ■  ·  ·  ·
+·  ·  ·  ■  ·  ·  ·</pre>
+            <p class="diagram-caption">
+              ■ — доступні поля (вертикалі та горизонталі)
+            </p>
+          </div>
+        </div>
+
+        <h2>Відкриті та напіввідкриті вертикалі</h2>
+        <p>
+          Тура любить лінії. Якщо на вертикалі немає ваших пішаків — вона
+          <strong>відкрита</strong> для вас. Якщо на вертикалі немає ваших
+          пішаків, але є пішак суперника — вертикаль
+          <strong>напіввідкрита</strong>: по ній зручно тиснути на слабкість.
+        </p>
+        <ul>
+          <li><strong>Відкрита вертикаль</strong>: ідеальне місце для тури.</li>
+          <li>
+            <strong>Напіввідкрита</strong>: тиск на пішака/фігуру, що стоїть
+            позаду.
+          </li>
+          <li>
+            <strong>Закрита</strong>: тура часто пасивна, доки не відбудеться
+            розмін або прорив.
+          </li>
+        </ul>
+
+        <h2>Сьома горизонталь: «царство» тур</h2>
+        <p>
+          Про тура на 7-й (для білих) або 2-й (для чорних) кажуть, що це майже
+          завжди небезпечно. Там тура атакує пішаки, що ще не рушили (наприклад,
+          f7/g7/h7), зв’язує фігури і інколи дає мати по задній лінії.
+        </p>
+
+        <h2>Подвоєння тур і координація</h2>
+        <div class="panel">
+          <h3>Подвоєння по вертикалі</h3>
+          <p>
+            Дві тури на одній вертикалі (наприклад, Re1 і Rfe1) створюють
+            сильний тиск. Одна тура підтримує іншу, і захистити поле/пішак стає
+            важче.
+          </p>
+
+          <h3>Місток (для ендшпілів)</h3>
+          <p>
+            У деяких пішакових ендшпілях або позиціях «тура + пішак проти тури»
+            тура може будувати «місток», закриваючи короля від шахів і
+            допомагаючи пішака провести в ферзі.
+          </p>
+        </div>
+
+        <h2>Типові тактичні мотиви тури</h2>
+        <ul>
+          <li>
+            <strong>Мат по задній лінії</strong>: якщо пішаки перед королем не
+            рушили і немає «вікна», тура/ферзь можуть матувати по 1-й/8-й
+            горизонталі.
+          </li>
+          <li>
+            <strong>Відрізання короля</strong>: тура ставиться так, щоб не
+            пустити короля до важливих полів (особливо в ендшпілі).
+          </li>
+          <li>
+            <strong>Зв’язування</strong>: тура по вертикалі зв’язує фігуру перед
+            королем або перед турою.
+          </li>
+        </ul>
+
+        <div class="panel">
+          <h2>Підсумок</h2>
+          <p>
+            Тура — майстер ліній. Дайте їй відкриту вертикаль, координацію з
+            другою турою і доступ до 7-ї горизонталі — і вона почне «коштувати»
+            більше, ніж її номінальні 5 очок.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="../index.html">На головну</a>
+            <a class="button primary" href="bishop.html">Далі: слон</a>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div class="container">
+            <p><a href="../index.html#pieces">← Усі фігури</a></p>
+          </div>
+        </footer>
+      </div>
+    </main>
+
+    <script src="../assets/silhouettes.js"></script>
+    <script src="../script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Головна сторінка -->
+  <url>
+    <loc>https://yourdomain.com/index.html</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://yourdomain.com/index.html"/>
+  </url>
+  
+  <!-- Історія шахів -->
+  <url>
+    <loc>https://yourdomain.com/history.html</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://yourdomain.com/history.html"/>
+  </url>
+  
+  <!-- Шахові фігури -->
+  <url>
+    <loc>https://yourdomain.com/pieces.html</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://yourdomain.com/pieces.html"/>
+  </url>
+
+</urlset>

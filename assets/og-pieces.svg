@@ -1,0 +1,34 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#2a2621"/>
+  
+  <!-- Chess pieces silhouettes -->
+  <g transform="translate(200, 180)" opacity="0.4">
+    <!-- King -->
+    <path d="M40 0 L45 5 L50 0 L50 10 L55 15 L55 25 L50 30 L50 40 L60 45 L60 50 L20 50 L20 45 L30 40 L30 30 L25 25 L25 15 L30 10 L30 0 L35 5 L40 0 Z" fill="#d1a35f"/>
+    <!-- Queen -->
+    <path d="M120 5 L130 15 L140 5 L150 15 L160 5 L165 20 L165 30 L160 35 L160 45 L170 50 L110 50 L110 45 L120 40 L120 35 L115 30 L115 20 L120 5 Z" fill="#e4c08a"/>
+  </g>
+  
+  <g transform="translate(800, 180)" opacity="0.4">
+    <!-- Rook -->
+    <path d="M20 10 L30 10 L30 0 L40 0 L40 10 L50 10 L50 0 L60 0 L60 10 L70 10 L70 20 L65 25 L65 45 L75 50 L15 50 L15 45 L25 40 L25 25 L20 20 L20 10 Z" fill="#d1a35f"/>
+    <!-- Knight -->
+    <path d="M120 50 L130 50 L140 45 L145 40 L150 30 L150 20 L145 15 L140 15 L135 10 L130 10 L125 15 L120 20 L115 30 L115 45 L120 50 Z" fill="#e4c08a"/>
+  </g>
+  
+  <!-- Small logo -->
+  <g transform="translate(100, 480)">
+    <circle cx="25" cy="25" r="8" fill="#e4c08a"/>
+    <circle cx="75" cy="25" r="8" fill="#d1a35f"/>
+    <circle cx="25" cy="75" r="8" fill="#d1a35f"/>
+    <circle cx="75" cy="75" r="8" fill="#e4c08a"/>
+    <circle cx="50" cy="50" r="6" fill="#f6efe6"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="600" y="300" font-family="serif" font-size="68" font-weight="bold" fill="#f6efe6" text-anchor="middle">Шахові фігури</text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="370" font-family="sans-serif" font-size="28" fill="#d1a35f" text-anchor="middle">Роль, хід і характер</text>
+</svg>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Playfair+Display:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Пішак — шахова фігура</title>
+    <meta
+      name="description"
+      content="Пішак у шахах: як ходить і б’є, подвійний хід, взяття на проході, перетворення, структура пішаків та приклади."
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Перейти до вмісту</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../index.html" aria-label="На головну">
+          <span class="brand-mark" aria-hidden="true">
+            <svg
+              viewBox="0 0 100 100"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="25" cy="25" r="8" fill="#e4c08a" />
+              <circle cx="75" cy="25" r="8" fill="#d1a35f" />
+              <circle cx="25" cy="75" r="8" fill="#d1a35f" />
+              <circle cx="75" cy="75" r="8" fill="#e4c08a" />
+              <path
+                d="M50 20 L65 35 L50 50 L35 35 Z"
+                fill="#e4c08a"
+                opacity="0.9"
+              />
+              <path
+                d="M50 50 L65 65 L50 80 L35 65 Z"
+                fill="#d1a35f"
+                opacity="0.9"
+              />
+              <circle cx="50" cy="50" r="6" fill="#f6efe6" />
+            </svg>
+          </span>
+          <span class="brand-title">Шахи</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          aria-label="Відкрити меню"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav" aria-label="Основна навігація">
+          <a href="../history.html">Історія</a>
+          <a href="../pieces.html">Фігури</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="article">
+      <div class="container">
+        <nav class="subnav" aria-label="Фігури">
+          <a href="king.html">Король</a>
+          <a href="queen.html">Ферзь</a>
+          <a href="rook.html">Тура</a>
+          <a href="bishop.html">Слон</a>
+          <a href="knight.html">Кінь</a>
+          <a href="pawn.html" aria-current="page">Пішак</a>
+        </nav>
+       <div class="piece-intro">
+          <div>
+            <h1>Пішак: малий, але важливий</h1>
+            <p class="lead">
+              Пішак оцінюють приблизно як <strong>1 очко</strong>, але він формує
+              «скелет» позиції. Саме пішаки визначають, де буде простір, які лінії
+              відкриються, і які фігури стануть активними. Пішак рухається
+              унікально: ходить прямо, а б’є по діагоналі.
+            </p>
+          </div>
+          <div class="sil" aria-label="Силует короля">
+            <div data-sil="king" aria-hidden="true"></div>
+          </div>
+       </div>
+        <div class="piece-hero">
+          <div class="panel">
+            <h2>Як ходить і як б’є пішак</h2>
+            <p>
+              <strong>Хід</strong>: пішак ходить на 1 клітинку вперед (для білих
+              — вгору дошки, для чорних — вниз). <strong>Взяття</strong>: б’є на
+              1 клітинку вперед по діагоналі (ліворуч або праворуч).
+            </p>
+
+            <h3>Приклад</h3>
+            <p>
+              Білий пішак на <strong>e4</strong> ходить на
+              <strong>e5</strong> (якщо клітинка порожня). Б’є на
+              <strong>d5</strong> або <strong>f5</strong> (якщо там стоїть
+              фігура суперника).
+            </p>
+          </div>
+
+          <div class="move-diagram" aria-label="Схема руху пішака">
+            <pre>
+·  ·  ·  ·  ·  ·  ·
+·  ·  ·  ·  ·  ·  ·
+·  ·  ×  ■  ×  ·  ·
+·  ·  ·  ♟  ·  ·  ·
+·  ·  ·  ·  ·  ·  ·
+·  ·  ·  ·  ·  ·  ·
+·  ·  ·  ·  ·  ·  ·</pre
+            >
+            <p class="diagram-caption">
+              ■ — хід вперед, × — взяття по діагоналі
+            </p>
+          </div>
+        </div>
+
+        <h2>Подвійний хід з початкової позиції</h2>
+        <p>
+          Якщо пішак ще не ходив і стоїть на стартовій лінії (для білих — 2-га,
+          для чорних — 7-ма), він може піти на
+          <strong>2 клітинки вперед</strong> за один хід (за умови, що обидві
+          клітинки порожні).
+        </p>
+
+        <h2>Взяття на проході (en passant)</h2>
+        <div class="panel">
+          <p>
+            Це спеціальне правило, яке існує саме через подвійний хід. Якщо
+            пішак суперника робить подвійний хід і «проскакує» поле, яке ваш
+            пішак міг би побити, ви маєте право
+            <strong>одразу наступним ходом</strong> взяти його «на проході».
+          </p>
+          <h3>Схематичний приклад</h3>
+          <ul>
+            <li>Білий пішак стоїть на <strong>e5</strong>.</li>
+            <li>Чорний пішак робить хід <strong>d7–d5</strong> (подвійний).</li>
+            <li>
+              Тоді білий може зіграти <strong>exd6 en passant</strong>: пішака з
+              e5 ставить на d6, а чорний пішак з d5 знімається.
+            </li>
+          </ul>
+          <p class="note">
+            Якщо ви пропустили момент і зробили інший хід — право на взяття на
+            проході зникає.
+          </p>
+        </div>
+
+        <h2>Перетворення (promotion)</h2>
+        <p>
+          Якщо пішак доходить до останньої лінії (для білих — 8-ма, для чорних —
+          1-ша), він <strong>перетворюється</strong> на будь-яку фігуру свого
+          кольору: найчастіше — на ферзя, але інколи вигідніше зробити
+          «недоперетворення» на коня/слона/туру (наприклад, щоб дати шах або
+          уникнути пату).
+        </p>
+
+        <h2>Пішак як структура: ланцюги, слабкості, прохідні</h2>
+        <ul>
+          <li>
+            <strong>Пішаковий ланцюг</strong>: пішаки підтримують один одного по
+            діагоналі. Він визначає простір і напрям атак.
+          </li>
+          <li>
+            <strong>Ізольований пішак</strong>: без сусідів по вертикалях — може
+            бути слабкістю, але інколи дає активність.
+          </li>
+          <li>
+            <strong>Подвійні пішаки</strong>: два пішаки на одній вертикалі —
+            часто слабкість, але інколи відкривають лінії для фігур.
+          </li>
+          <li>
+            <strong>Прохідний пішак</strong>: перед ним немає ворожих пішаків на
+            суміжних вертикалях, і його важко зупинити без фігур.
+          </li>
+        </ul>
+
+        <div class="panel">
+          <h2>Підсумок</h2>
+          <p>
+            Пішак рухається простіше за всі фігури, але створює найскладніші
+            наслідки. Хто краще розуміє пішакову структуру — той частіше виграє
+            довгі партії.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="../index.html">На головну</a>
+            <a class="button primary" href="king.html">Повернутись до короля</a>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div class="container">
+            <p><a href="../index.html#pieces">← Усі фігури</a></p>
+          </div>
+        </footer>
+      </div>
+    </main>
+
+    <script src="../assets/silhouettes.js"></script>
+    <script src="../script.js"></script>
+  </body>
+</html>

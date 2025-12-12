@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Playfair+Display:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Слон — шахова фігура</title>
+    <meta
+      name="description"
+      content="Слон у шахах: діагоналі, пара слонів, сильні/слабкі поля, тактика й приклади."
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Перейти до вмісту</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../index.html" aria-label="На головну">
+          <span class="brand-mark" aria-hidden="true">
+            <svg
+              viewBox="0 0 100 100"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="25" cy="25" r="8" fill="#e4c08a" />
+              <circle cx="75" cy="25" r="8" fill="#d1a35f" />
+              <circle cx="25" cy="75" r="8" fill="#d1a35f" />
+              <circle cx="75" cy="75" r="8" fill="#e4c08a" />
+              <path
+                d="M50 20 L65 35 L50 50 L35 35 Z"
+                fill="#e4c08a"
+                opacity="0.9"
+              />
+              <path
+                d="M50 50 L65 65 L50 80 L35 65 Z"
+                fill="#d1a35f"
+                opacity="0.9"
+              />
+              <circle cx="50" cy="50" r="6" fill="#f6efe6" />
+            </svg>
+          </span>
+          <span class="brand-title">Шахи</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          aria-label="Відкрити меню"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav" aria-label="Основна навігація">
+          <a href="../history.html">Історія</a>
+          <a href="../pieces.html">Фігури</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="article">
+      <div class="container">
+        <nav class="subnav" aria-label="Фігури">
+          <a href="king.html">Король</a>
+          <a href="queen.html">Ферзь</a>
+          <a href="rook.html">Тура</a>
+          <a href="bishop.html" aria-current="page">Слон</a>
+          <a href="knight.html">Кінь</a>
+          <a href="pawn.html">Пішак</a>
+        </nav>
+        <div class="piece-intro">
+          <div>
+            <h1>Слон: діагоналі вирішують позицію</h1>
+            <p class="lead">
+              Слон — легка фігура (типово <strong>≈3 очки</strong>), яка ходить
+              по діагоналях. Його особливість: він
+              <strong>назавжди прив’язаний</strong> до кольору полів, на яких
+              стартує. Через це пара слонів часто сильніша за «слон + кінь» у
+              відкритих позиціях.
+            </p>
+          </div>
+                <div class="sil" aria-label="Силует слона">
+                  <div data-sil="bishop" aria-hidden="true"></div>
+                </div>
+        </div>
+        <div class="piece-hero">
+          <div class="panel">
+            <h2>Як ходить слон</h2>
+            <p>
+              Слон ходить на будь-яку кількість клітинок по
+              <strong>діагоналі</strong>, доки шлях не перекритий. Він не може
+              перестрибувати фігури.
+            </p>
+
+            <h3>Приклад</h3>
+            <p>
+              Слон на <strong>c1</strong> (білий) ходить по діагоналі: d2, e3,
+              f4, g5, h6. Слон на <strong>f4</strong> контролює чотири напрямки
+              діагоналей: до e5–d6–c7–b8, до g5–h6, до e3–d2–c1, а також до
+              g3–h2 (якщо немає фігур, що перекривають шлях). Головне — мислити
+              діагоналями і бачити «промені» атаки.
+            </p>
+          </div>
+
+          <div class="move-diagram" aria-label="Схема руху слона">
+            <pre>
+■  ·  ·  ·  ·  ·  ■
+·  ■  ·  ·  ·  ■  ·
+·  ·  ■  ·  ■  ·  ·
+·  ·  ·  ♗  ·  ·  ·
+·  ·  ■  ·  ■  ·  ·
+·  ■  ·  ·  ·  ■  ·
+■  ·  ·  ·  ·  ·  ■</pre
+            >
+            <p class="diagram-caption">■ — доступні поля (діагоналі)</p>
+          </div>
+        </div>
+
+        <h2>Пара слонів</h2>
+        <p>
+          Якщо у вас є два слони (по білих і по чорних полях), ви контролюєте
+          діагоналі обох кольорів. У відкритих позиціях (коли пішакові ланцюги
+          розміняні) це створює далекобійну перевагу: слони «прострілюють» дошку
+          і швидко переключаються між флангами.
+        </p>
+        <ul>
+          <li><strong>Відкритість</strong> підсилює слонів.</li>
+          <li>
+            <strong>Закритість</strong> часто робить слона пасивним, якщо його
+            діагоналі заблоковані власними пішаками.
+          </li>
+        </ul>
+
+        <h2>Сильний і поганий слон</h2>
+        <div class="panel">
+          <h3>Поганий слон</h3>
+          <p>
+            «Поганий» слон — той, що впирається у власні пішаки на полях того ж
+            кольору. Наприклад, якщо ваш слон по білих полях, а більшість ваших
+            пішаків стоять на білих — ви самі перекрили його діагоналі.
+          </p>
+
+          <h3>Сильний слон</h3>
+          <p>
+            Сильний слон має відкриті діагоналі, тисне на слабкі поля навколо
+            короля або атакує важливі точки (наприклад, f7/f2, діагональ a2–g8
+            тощо).
+          </p>
+        </div>
+
+        <h2>Тактичні мотиви зі слоном</h2>
+        <ul>
+          <li>
+            <strong>Діагональний удар</strong>: слон «підвисає» на довгій
+            діагоналі й раптово відкривається після ходу пішака.
+          </li>
+          <li>
+            <strong>Зв’язування</strong>: слон зв’язує коня/пішака, якщо позаду
+            стоїть ферзь або король.
+          </li>
+          <li>
+            <strong>Жертва на h7/h2</strong> (типовий мотив): слон може відкрити
+            короля, але працює лише за наявності підкріплення.
+          </li>
+        </ul>
+
+        <h2>Практичні приклади (уявні, але корисні)</h2>
+        <ul>
+          <li>
+            Слон на <strong>b1</strong> тисне на діагональ b1–h7. Якщо суперник
+            зробив необережне послаблення навколо короля (наприклад, пішаки
+            g/h), ця діагональ стає дорогою атакою.
+          </li>
+          <li>
+            Слон на <strong>g2</strong> контролює центр (d5/e4/f3) і часто
+            підтримує просування пішака <strong>f</strong> або
+            <strong>e</strong> у атакувальних схемах.
+          </li>
+        </ul>
+
+        <div class="panel">
+          <h2>Підсумок</h2>
+          <p>
+            Слон — це геометрія діагоналей. У відкритих позиціях він блискучий,
+            у закритих — потребує плану (прорив пішаками або переведення на іншу
+            діагональ). Дивіться на дошку як на систему променів: де ваш слон
+            «світить», а де він закритий.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="../index.html">На головну</a>
+            <a class="button primary" href="knight.html">Далі: кінь</a>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div class="container">
+            <p><a href="../index.html#pieces">← Усі фігури</a></p>
+          </div>
+        </footer>
+      </div>
+    </main>
+
+    <script src="../assets/silhouettes.js"></script>
+    <script src="../script.js"></script>
+  </body>
+</html>

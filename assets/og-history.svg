@@ -1,0 +1,23 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#2a2621"/>
+  
+  <!-- Decorative elements -->
+  <circle cx="100" cy="100" r="60" fill="#3a3631" opacity="0.3"/>
+  <circle cx="1100" cy="530" r="80" fill="#3a3631" opacity="0.3"/>
+  
+  <!-- Small logo -->
+  <g transform="translate(100, 480)">
+    <circle cx="25" cy="25" r="8" fill="#e4c08a"/>
+    <circle cx="75" cy="25" r="8" fill="#d1a35f"/>
+    <circle cx="25" cy="75" r="8" fill="#d1a35f"/>
+    <circle cx="75" cy="75" r="8" fill="#e4c08a"/>
+    <circle cx="50" cy="50" r="6" fill="#f6efe6"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="600" y="280" font-family="serif" font-size="68" font-weight="bold" fill="#f6efe6" text-anchor="middle">Історія шахів</text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="350" font-family="sans-serif" font-size="28" fill="#d1a35f" text-anchor="middle">Від чатураґи до сучасності</text>
+</svg>

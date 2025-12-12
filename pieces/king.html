@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Playfair+Display:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Король — шахова фігура</title>
+    <meta
+      name="description"
+      content="Король у шахах: хід, рокіровка, заборона входити під шах, ідеї ендшпілю та приклади."
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Перейти до вмісту</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../index.html" aria-label="На головну">
+          <span class="brand-mark" aria-hidden="true">
+            <svg
+              viewBox="0 0 100 100"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="25" cy="25" r="8" fill="#e4c08a" />
+              <circle cx="75" cy="25" r="8" fill="#d1a35f" />
+              <circle cx="25" cy="75" r="8" fill="#d1a35f" />
+              <circle cx="75" cy="75" r="8" fill="#e4c08a" />
+              <path
+                d="M50 20 L65 35 L50 50 L35 35 Z"
+                fill="#e4c08a"
+                opacity="0.9"
+              />
+              <path
+                d="M50 50 L65 65 L50 80 L35 65 Z"
+                fill="#d1a35f"
+                opacity="0.9"
+              />
+              <circle cx="50" cy="50" r="6" fill="#f6efe6" />
+            </svg>
+          </span>
+          <span class="brand-title">Шахи</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          aria-label="Відкрити меню"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav" aria-label="Основна навігація">
+          <a href="../history.html">Історія</a>
+          <a href="../pieces.html">Фігури</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="article">
+      <div class="container">
+        <nav class="subnav" aria-label="Фігури">
+          <a href="king.html" aria-current="page">Король</a>
+          <a href="queen.html">Ферзь</a>
+          <a href="rook.html">Тура</a>
+          <a href="bishop.html">Слон</a>
+          <a href="knight.html">Кінь</a>
+          <a href="pawn.html">Пішак</a>
+        </nav>
+        <div class="piece-intro">
+          <div>
+            <h1>Король: фігура, яку неможна «втратити»</h1>
+            <p class="lead">
+              Король — центральна фігура за правилами: партія закінчується, коли
+              король потрапляє в мат (немає легального ходу, що рятує від шаху). На
+              відміну від інших фігур, король не має «ціни в очках» у звичному сенсі
+              — він і є мета.
+            </p>
+          </div>
+          <div class="sil" aria-label="Силует короля">
+                    <div data-sil="king" aria-hidden="true"></div>
+        </div>
+</div>  
+        <div class="piece-hero">
+          <div class="panel">
+            <h2>Як ходить король</h2>
+            <p>
+              Король ходить на <strong>одну клітинку</strong> в будь-якому
+              напрямку: по вертикалі, горизонталі або діагоналі. Важлива умова:
+              король <strong>не може</strong> зробити хід на клітинку, що
+              перебуває під атакою фігур суперника. Тобто «під шах» входити
+              заборонено.
+            </p>
+
+            <h3>Приклад</h3>
+            <p>
+              Якщо король стоїть на <strong>e4</strong>, він потенційно може
+              перейти на: d3, d4, d5, e3, e5, f3, f4, f5. Але реальні дозволені
+              ходи залежать від того, чи не б’ються ці поля супротивником.
+            </p>
+          </div>
+
+          <div class="move-diagram" aria-label="Схема руху короля">
+            <pre>·  ·  ·  ·  ·
+·  ■  ■  ■  ·
+·  ■  ♔  ■  ·
+·  ■  ■  ■  ·
+·  ·  ·  ·  ·</pre>
+            <p class="diagram-caption">■ — доступні поля для ходу</p>
+          </div>
+        </div>
+
+        <h2>Шах, мат і пат</h2>
+        <ul>
+          <li>
+            <strong>Шах</strong> — король атакований хоча б однією фігурою
+            суперника. На шах треба відповісти негайно: втекти, побити нападника
+            або закритися (якщо це лінійна атака).
+          </li>
+          <li>
+            <strong>Мат</strong> — шах, від якого немає жодного легального
+            захисту. Партія завершується.
+          </li>
+          <li>
+            <strong>Пат</strong> — король не під шахом, але легальних ходів
+            немає. Це нічия.
+          </li>
+        </ul>
+
+        <h2>Рокіровка: спеціальний хід короля</h2>
+        <p>
+          Рокіровка — єдиний випадок, коли король рухається на дві клітинки за
+          один хід (разом з турою). Її сенс — швидко сховати короля і вивести
+          туру в гру.
+        </p>
+        <div class="panel">
+          <h3>Умови рокіровки (коротко, але по суті)</h3>
+          <ul>
+            <li>
+              Король і відповідна тура <strong>ще не ходили</strong> у цій
+              партії.
+            </li>
+            <li>Між ними <strong>немає фігур</strong>.</li>
+            <li>Король <strong>не перебуває під шахом</strong>.</li>
+            <li>
+              Король <strong>не проходить</strong> через атаковане поле і
+              <strong>не стає</strong> на атаковане поле.
+            </li>
+          </ul>
+          <p class="note">
+            Важливо: навіть якщо тура «під боєм», це саме по собі не забороняє
+            рокіровку — критичні саме поля короля.
+          </p>
+        </div>
+
+        <h2>Король в ендшпілі: активність і опозиція</h2>
+        <p>
+          На початку й у середині партії короля зазвичай бережуть. Але в
+          ендшпілі, коли на дошці менше фігур, король стає
+          <strong>активним бійцем</strong>: допомагає проводити пішаки, блокує
+          прохідних, відрізає короля суперника.
+        </p>
+        <ul>
+          <li>
+            <strong>Активний король</strong> — стоїть ближче до центру/пішаків і
+            підтримує просування.
+          </li>
+          <li>
+            <strong>Опозиція</strong> — ситуація, коли королі стоять один
+            навпроти одного через одну клітинку; правильна опозиція допомагає
+            «продавити» суперника.
+          </li>
+          <li>
+            <strong>Правило квадрата</strong> (для пішаків) — простий спосіб
+            оцінити, чи встигає король наздогнати прохідного пішака.
+          </li>
+        </ul>
+
+        <h2>Типові тактичні мотиви</h2>
+        <ul>
+          <li>
+            <strong>Матова сітка</strong>: короля обмежують лінійними фігурами,
+            а легкі фігури/пішаки перекривають втечі.
+          </li>
+          <li>
+            <strong>Відрізання короля</strong>: тура або ферзь «ріжуть» короля
+            по лінії, не пускаючи до важливих полів.
+          </li>
+          <li>
+            <strong>Зав’язування</strong>: захист від шаху примушує суперника до
+            пасивних ходів.
+          </li>
+        </ul>
+
+        <div class="panel">
+          <h2>Підсумок</h2>
+          <p>
+            Король рухається мало, але вирішує все. Навчіться відрізняти
+            «короля, якого треба сховати» від «короля, якого треба активізувати»
+            — і багато позицій стануть зрозумілішими.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="../index.html">На головну</a>
+            <a class="button primary" href="queen.html">Далі: ферзь</a>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div class="container">
+            <p><a href="../index.html#pieces">← Усі фігури</a></p>
+          </div>
+        </footer>
+      </div>
+    </main>
+
+    <script src="../assets/silhouettes.js"></script>
+    <script src="../script.js"></script>
+  </body>
+</html>
