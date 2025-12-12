@@ -1,4 +1,45 @@
 (function () {
+    // Page transition animation with View Transitions API
+    if ('startViewTransition' in document) {
+        // Use modern View Transitions API
+        document.addEventListener("click", function (e) {
+            var link = e.target.closest("a");
+            if (!link) return;
+
+            var href = link.getAttribute("href");
+            // Only internal links, not hash links, not external
+            if (href && !href.startsWith("#") && !href.startsWith("http") && !link.hasAttribute("target")) {
+                e.preventDefault();
+                
+                document.startViewTransition(function() {
+                    window.location.href = href;
+                });
+            }
+        });
+    } else {
+        // Fallback: simple fade without white flash
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        
+        if (!reduceMotion) {
+            document.addEventListener("click", function (e) {
+                var link = e.target.closest("a");
+                if (!link) return;
+
+                var href = link.getAttribute("href");
+                if (href && !href.startsWith("#") && !href.startsWith("http") && !link.hasAttribute("target")) {
+                    e.preventDefault();
+                    
+                    document.body.style.transition = "opacity 0.2s ease";
+                    document.body.style.opacity = "0";
+                    
+                    setTimeout(function () {
+                        window.location.href = href;
+                    }, 200);
+                }
+            });
+        }
+    }
+
     // Mark current page in the top navigation
     var path = (location.pathname || "").replace(/\\/g, "/");
     var file = path.split("/").pop() || "index.html";
