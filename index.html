@@ -135,12 +135,23 @@
       <section class="hero" aria-label="Постер">
         <div class="container hero-grid">
           <div>
-            <h1 class="home-title">ШАХИ</h1>
+            <h1 class="home-title" id="chess-title">
+              <span data-letter="Ш">Ш</span>
+              <span data-letter="А">А</span>
+              <span data-letter="Х">Х</span>
+              <span data-letter="И">И</span>
+            </h1>
           </div>
         </div>
         <div class="chess-notation" aria-hidden="true"></div>
       </section>
     </main>
+
+    <footer class="site-footer home-footer">
+      <div class="container">
+        <p>Фанатам шахів України від <a href="https://www.youtube.com/@itmentor" target="_blank" rel="noopener">@ITMENTOR</a> 2026</p>
+      </div>
+    </footer>
 
     <script src="script.js"></script>
     <script>
@@ -169,6 +180,30 @@
             setTimeout(() => span.remove(), 3000);
           }, 2000);
         }, 2000); // Start after title animation
+
+        // Title letter-to-icon animation
+        const title = document.getElementById("chess-title");
+        let isAnimating = false;
+
+        function triggerAnimation() {
+          if (isAnimating) return;
+          isAnimating = true;
+          title.classList.add("animating");
+
+          setTimeout(() => {
+            title.classList.remove("animating");
+            isAnimating = false;
+          }, 1300); // 0.3s delay + 1s animation
+        }
+
+        // Desktop hover
+        title.addEventListener("mouseenter", triggerAnimation);
+
+        // Mobile tap
+        title.addEventListener("touchstart", function(e) {
+          e.preventDefault();
+          triggerAnimation();
+        });
       }
     </script>
   </body>
